@@ -10,6 +10,20 @@ html {
 body {
   margin: 0;
   min-height: 100%;
+  background-color: rgb(167, 201, 178);
+}
+
+header {
+  text-align: center;
+  height: 100px;
+  margin-top: 160px;
+}
+
+h1 {
+  color: rgb(208, 226, 218);
+  text-shadow: 1px 6px 2px #8d9c91;
+  font-family: 'VT323', monospace;
+  font-size: 4rem;
 }
 section {
   height: 800px;
@@ -23,28 +37,26 @@ li {
   margin: 0;
   padding: 0;
   list-style: none;
+  box-shadow: 1px 1px 9px #879685;
 }
 
 ul {
-  border: thin solid;
-  height: calc(100vh - 3 * var(--header-font-size));
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   text-align: center;
   line-height: 16px;
+  margin-bottom: 400px;
 }
 
 ul li {
-  border: thin solid;
+  border: thin solid #8f9b8d;
   height: 20px;
   width: 20px;
   font-family: monospace;
-  background-color: rgb(151, 155, 151);
+  background-color: rgb(208, 226, 218);
   cursor: pointer;
   display: flex;
-
-  //u can remove these
-  align-items: center;
-  justify-content: center;
+  box-shadow: rgb(253, 255, 253) 2px 1px 3px 1px inset;
+  background-color: rgba(252, 252, 252, 0.25);
 }
