@@ -70,16 +70,17 @@ export class App extends Component {
   render() {
     return (
       <main>
-        {/* <style>
+        <style>
           @import
           url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-        </style> */}
+        </style>
         <header>
           <h1>minesweeper </h1>
 
           <h2>
             <button onClick={this.handleNewGame}>new game</button>
           </h2>
+          <h2 className="outcome">status: {this.state.state}</h2>
         </header>
         <ul>
           {this.state.board.map((row, rowIndex) => {
