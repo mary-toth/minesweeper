@@ -13,6 +13,7 @@ export class App extends Component {
       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
     ],
     difficulty: 0,
+    id: null,
   }
 
   handleNewGame = async () => {
@@ -46,8 +47,9 @@ export class App extends Component {
     this.setState(game)
   }
 
-  handleRightClickCell = async (rowIndex, colIndex) => {
+  handleRightClickCell = async (rowIndex, colIndex, event) => {
     const body = { row: rowIndex, col: colIndex }
+    event.preventDefault()
 
     const response = await fetch(
       `https://minesweeper-api.herokuapp.com/games/${this.state.id}/flag`,
@@ -59,6 +61,10 @@ export class App extends Component {
     )
     const game = await response.json()
     this.setState(game)
+  }
+
+  componentDidMount() {
+    this.handleNewGame()
   }
 
   render() {
@@ -82,8 +88,8 @@ export class App extends Component {
                 <li
                   key={colIndex}
                   onClick={() => this.handleClickCell(rowIndex, colIndex)}
-                  onContextMenu={() =>
-                    this.handleRightClickCell(rowIndex, colIndex)
+                  onContextMenu={event =>
+                    this.handleRightClickCell(rowIndex, colIndex, event)
                   }
                 >
                   {cell}
